@@ -1,11 +1,22 @@
-extends enemy
-class_name marie
+extends Area2D
 
-# Called when the node enters the scene tree for the first time.
+@export var speed = 200
+var direction = 1
+var can_attack = true
+var life_points = 6
+var state_alert = false
+
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+	#$AnimatedSprite2D.play("walk")
 	pass
+
+func _process(delta):
+	if life_points <= 0:
+		# Falta animacion de muerte.
+		#await(get_tree().create_timer(0.01))
+		queue_free()
+
+func _on_area_entered(area):
+	if area.is_in_group("Ammo"): # Corregir.
+		life_points -= 1
+		position.x -= -10

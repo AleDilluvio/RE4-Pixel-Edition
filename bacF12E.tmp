@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://0ivo6mpfjipq" path="res://src/background.png" id="1_tac8e"]
 [ext_resource type="PackedScene" uid="uid://8h5o8ihwiq6b" path="res://player.tscn" id="2_yasmc"]
-[ext_resource type="PackedScene" uid="uid://b0iv1jj2mtptf" path="res://marie.tscn" id="3_ponfl"]
+[ext_resource type="PackedScene" path="res://marie.tscn" id="3_ponfl"]
 
 [node name="Background" type="Sprite2D"]
 position = Vector2(2059, 1348)

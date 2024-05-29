@@ -1,5 +1,4 @@
 extends Node2D
-class_name enemy
 
 var vida = 3
 @export var speed = 200

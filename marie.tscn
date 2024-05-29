@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://bktx12i3mcsjn"]
+[gd_scene load_steps=8 format=3 uid="uid://b0iv1jj2mtptf"]
 
-[ext_resource type="PackedScene" uid="uid://cq8kqu80qjf30" path="res://enemy.tscn" id="1_cf743"]
 [ext_resource type="Script" path="res://marie.gd" id="2_qyqdm"]
 [ext_resource type="Texture2D" uid="uid://bqgs4ys5i727a" path="res://src/marie-idle.png" id="3_wwtx5"]
 [ext_resource type="Texture2D" uid="uid://cab5of6le35ql" path="res://src/marie-walk1.png" id="4_yusnc"]
@@ -30,20 +29,26 @@ height = 94.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_t7rtm"]
 radius = 16.0
 
-[node name="Enemy" instance=ExtResource("1_cf743")]
+[node name="Enemy" type="Area2D"]
 position = Vector2(0, 2)
 script = ExtResource("2_qyqdm")
+metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" parent="." index="0"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(459, 170)
 sprite_frames = SubResource("SpriteFrames_tblyc")
 animation = &"walk"
 frame_progress = 0.449058
+metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(449, 165)
 shape = SubResource("CapsuleShape2D_vhl3q")
+metadata/_edit_group_ = true
 
-[node name="knife" type="CollisionShape2D" parent="." index="2"]
+[node name="knife" type="CollisionShape2D" parent="."]
 position = Vector2(499, 152)
 shape = SubResource("CircleShape2D_t7rtm")
+metadata/_edit_group_ = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
