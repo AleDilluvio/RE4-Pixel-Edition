@@ -4,7 +4,10 @@
 
 [node name="Enemy" type="Area2D"]
 script = ExtResource("1_y8j4g")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+metadata/_edit_group_ = true
