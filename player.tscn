@@ -30,7 +30,7 @@ radius = 48.0
 height = 98.0
 
 [node name="Player" type="Area2D"]
-position = Vector2(585, 302)
+position = Vector2(600, 500)
 script = ExtResource("1_ilobr")
 metadata/_edit_group_ = true
 

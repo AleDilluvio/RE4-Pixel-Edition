@@ -1,9 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0nkp1dgj5q6r"]
 
-[ext_resource type="Texture2D" uid="uid://c0ev67alypo4x" path="res://src/IMG-20230927-WA0035.jpg" id="1_41xsf"]
+[ext_resource type="Texture2D" uid="uid://0ivo6mpfjipq" path="res://src/background.png" id="1_tac8e"]
 [ext_resource type="PackedScene" uid="uid://8h5o8ihwiq6b" path="res://player.tscn" id="2_yasmc"]
 
 [node name="Background" type="Sprite2D"]
-texture = ExtResource("1_41xsf")
+position = Vector2(2107, 1448)
+scale = Vector2(1, 0.974)
+texture = ExtResource("1_tac8e")
+metadata/_edit_group_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_yasmc")]
+position = Vector2(13, 8.21665)

@@ -5,6 +5,7 @@ var direction = 1 # Seteo en uno para que empiece disparando para la derecha.
 var screen_size # Tamaño pantalla.
 var can_fire = true
 var bullet = preload("res://bullet.tscn")
+var life_points = 6
 
 func _get_position():
 	return position
@@ -47,11 +48,11 @@ func _physics_process(delta):
 		var bullet_instance = bullet.instantiate()
 		if direction:
 			bullet_instance._set_speed(abs(bullet_instance._get_speed()))
-			bullet_instance._set_position(_get_position().x + 64, _get_position().y - 10) # Ver como poder obtener la ubicacion del arma, para no hardcodear.
+			bullet_instance._set_position(_get_position().x + 64, _get_position().y - 10)
 		else:
 			bullet_instance._set_speed(abs(bullet_instance._get_speed())*(-1))
 			bullet_instance.get_child(0).flip_h = true
-			bullet_instance._set_position(_get_position().x - 64,_get_position().y - 10) # Ver como poder obtener la ubicacion del arma, para no hardcodear.
+			bullet_instance._set_position(_get_position().x - 64,_get_position().y - 10)
 		
 		get_parent().add_child(bullet_instance)
 		can_fire = false
