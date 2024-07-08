@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0iv1jj2mtptf"]
+[gd_scene load_steps=10 format=3 uid="uid://b0iv1jj2mtptf"]
 
 [ext_resource type="Script" path="res://marie.gd" id="2_qyqdm"]
 [ext_resource type="Texture2D" uid="uid://bqgs4ys5i727a" path="res://src/marie-idle.png" id="3_wwtx5"]
@@ -29,6 +29,10 @@ height = 94.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_t7rtm"]
 radius = 16.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibc3q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvmje"]
+
 [node name="Enemy" type="Area2D"]
 position = Vector2(0, 2)
 script = ExtResource("2_qyqdm")
@@ -49,6 +53,26 @@ metadata/_edit_group_ = true
 [node name="knife" type="CollisionShape2D" parent="."]
 position = Vector2(499, 152)
 shape = SubResource("CircleShape2D_t7rtm")
+metadata/_edit_group_ = true
+
+[node name="Ray_Damage_Left" type="ShapeCast2D" parent="."]
+position = Vector2(409, 164)
+rotation = 3.14159
+scale = Vector2(0.3, 4.885)
+shape = SubResource("RectangleShape2D_ibc3q")
+target_position = Vector2(10.0001, 0)
+collide_with_areas = true
+collide_with_bodies = false
+metadata/_edit_group_ = true
+
+[node name="Ray_Damage_Right" type="ShapeCast2D" parent="."]
+position = Vector2(475, 164)
+rotation = 4.71239
+scale = Vector2(4.525, 1.245)
+shape = SubResource("RectangleShape2D_jvmje")
+target_position = Vector2(0, 18.4739)
+collide_with_areas = true
+collide_with_bodies = false
 metadata/_edit_group_ = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
